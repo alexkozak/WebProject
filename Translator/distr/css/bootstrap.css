@@ -2376,25 +2376,25 @@ table th[class*="col-"] {
 .table-hover > tbody > tr.success:hover > th {
   background-color: #d0e9c6;
 }
-.table > thead > tr > td.info,
-.table > tbody > tr > td.info,
-.table > tfoot > tr > td.info,
-.table > thead > tr > th.info,
-.table > tbody > tr > th.info,
-.table > tfoot > tr > th.info,
-.table > thead > tr.info > td,
-.table > tbody > tr.info > td,
-.table > tfoot > tr.info > td,
-.table > thead > tr.info > th,
-.table > tbody > tr.info > th,
-.table > tfoot > tr.info > th {
+.table > thead > tr > td.logo_contacts,
+.table > tbody > tr > td.logo_contacts,
+.table > tfoot > tr > td.logo_contacts,
+.table > thead > tr > th.logo_contacts,
+.table > tbody > tr > th.logo_contacts,
+.table > tfoot > tr > th.logo_contacts,
+.table > thead > tr.logo_contacts > td,
+.table > tbody > tr.logo_contacts > td,
+.table > tfoot > tr.logo_contacts > td,
+.table > thead > tr.logo_contacts > th,
+.table > tbody > tr.logo_contacts > th,
+.table > tfoot > tr.logo_contacts > th {
   background-color: #d9edf7;
 }
-.table-hover > tbody > tr > td.info:hover,
-.table-hover > tbody > tr > th.info:hover,
-.table-hover > tbody > tr.info:hover > td,
-.table-hover > tbody > tr:hover > .info,
-.table-hover > tbody > tr.info:hover > th {
+.table-hover > tbody > tr > td.logo_contacts:hover,
+.table-hover > tbody > tr > th.logo_contacts:hover,
+.table-hover > tbody > tr.logo_contacts:hover > td,
+.table-hover > tbody > tr:hover > .logo_contacts,
+.table-hover > tbody > tr.logo_contacts:hover > th {
   background-color: #c4e3f3;
 }
 .table > thead > tr > td.warning,

@@ -1,3 +1,71 @@
-INPUT:focus {
-    color: red; /* Красный цвет текста */
+body{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Tahoma;
+}
+
+.container{
+    width: 66%;
+    margin: 5px auto 0px auto;
+    /*
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+    */
+}
+
+.menu a{
+    position: relative;
+    padding: 0% 3%;
+    margin: 0% 3%;
+    border: solid 1px #57525a;
+    color: #57525a;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 5px;
+
+}
+
+.menu a:hover{
+
+    color: #00169d;
+    border-color: #00169d;
+}
+
+.content{
+    margin-top: 3%;
+
+}
+
+img{
+    width: 50%;
+    float: left;
+    margin-right: 1%;
+    margin-bottom: 1%;
+
+}
+.note{
+    float: right;
+    background: rgba(8,255,197,0.29);
+    border: 1px solid black;
+    padding: 0 5px;
+    margin: 5px 0 5px 10px;
+    width: 120px;
+    font-size: 0.8em;
+}
+
+.line{
+    width: 66%;
+    border-top: solid 2px rgba(62,33,179,0.29);
+    margin: 2% auto;
+
+}
+
+.block{
+    padding: 1% 1%;
+    border: 1px solid black;
+    margin-right: 10%;
+
+    float: left;
+
 }
