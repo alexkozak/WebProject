@@ -82,4 +82,10 @@ adobe xd - создание прототипа
 https://www.youtube.com/watch?v=3wAQCXL7RDk
 примерно с 33 минуты
 
+---=== СОЗДАНИЕ АДАПТИВНЫХ САЙТОВ ===---
+https://www.youtube.com/watch?v=-wcy1Bsq-Ls&list=LLWWDgwrG66-IcjsVq1v7iGg&index=5
+7:00 - хороший пример полей ввода без js
+так же просмотри описание main.css
+остановился 10:15
+
 
