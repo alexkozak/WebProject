@@ -1,0 +1,15 @@
+.menu {
+    background-color: lightgrey;
+    border: red solid 1px;
+
+    margin: 0px 10px;
+
+    font-size: 2rem;
+
+}
+
+ul li {
+    display: inline-block;
+    text-align: right;
+    margin: 0% 6%;
+}
