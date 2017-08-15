@@ -1,6 +1,5 @@
 .menu {
-    background-color: lightgrey;
-    border: red solid 1px;
+    background-color: #333;
 
     margin: 0px 10px;
 
@@ -12,4 +11,17 @@ ul li {
     display: inline-block;
     text-align: right;
     margin: 0% 6%;
+}
+
+ul li a{
+    /*color: whitesmoke;*/
+    color: #fff;
+
+}
+
+/*!!!!!!!!!!!!!!!! при наведении сделать плавную анимацию как на apple */
+ul li a:hover{
+    text-decoration: none;
+    color: red;
+
 }
