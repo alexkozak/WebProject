@@ -1,0 +1,109 @@
+/*
+    ЦВЕТА:
+    основной текст
+    основной фон
+
+
+    акцентный
+
+*/
+
+
+
+
+
+body{
+    margin: 0 0;
+    padding: 0 0;
+
+}
+
+.container{
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+
+
+}
+
+.line{
+    margin: 0% auto;
+    padding: 0% 0%;
+    display: block;
+    box-sizing: border-box;
+
+
+}
+
+.menu{
+    /*todo нариловать логотип*/
+    /*todo сделать логотип в меню*/
+    /*todo закрепить, при прокрутке вверх/вниз остается. на вершине - отступ*/
+    /*todo выше менюшки маленький значек выбо языков*/
+
+    background-color: #333;
+    margin-top: 2%;
+    margin-bottom: 4%;
+    font-size: 1.2rem;
+
+}
+
+ul{
+    margin: 0 0;
+}
+
+ul li {
+    display: inline-block;
+    text-align: right;
+    margin: 0% 6%;
+    /*todo убрать перенос строки. проблема возможно из-за ширишы контейнера*/
+}
+
+ul li a{
+    /*color: whitesmoke;*/
+    color: #fff;
+    text-decoration: none;
+}
+
+ul li a:hover{
+    /*todo !!!!!!!!!!!!!!!! при наведении сделать плавную анимацию как на apple */
+    text-decoration: none;
+    color: red;
+}
+
+img{
+    background-position: center ;
+    width: 100%;
+    /*height: 400px;*/
+}
+
+.text-block{
+    /*todo сделать нормальную рамку*/
+    /*todo сделать набегание*/
+
+    margin: 20px 0px;
+    display: inline-block;
+    width: 100%;
+    /*todo выбрать фон*/
+    background-color: rgba(255,186,0,0.1);
+    border: 1px solid rgba(255,186,0,0.15);
+}
+
+h1{
+    color: #ffc514;
+    text-align: center;
+    margin: 0 0;
+}
+
+h2{
+    color: #ffc514;
+    text-align: center;
+    margin: 0 0;
+}
+
+footer{
+    display: block;
+    background-color: #282828;
+    color: #fff;
+;
+}

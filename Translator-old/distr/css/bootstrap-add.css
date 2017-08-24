@@ -1,0 +1,10 @@
+
+[class*="col-"] {
+    /*background-color: #eee;*/
+    border-right: 2px dotted black;
+    border-left: 2px dotted black;
+    /*text-align: center;*/
+    /*padding-top: 15px;*/
+    /*padding-bottom: 15px;*/
+    /*font-size: 2rem;*/
+}
