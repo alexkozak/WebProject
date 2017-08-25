@@ -70,6 +70,7 @@ ul{
     /*todo !!!!!!!!!!!!!!!! при наведении сделать плавную анимацию как на apple */
     text-decoration: none;
     color: red;
+    cursor: pointer;
 }
 
 img{
