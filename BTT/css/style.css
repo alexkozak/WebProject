@@ -6,6 +6,8 @@
 
     акцентный
 
+    красивый феолетовый цвет darkorchid
+
 */
 
 
@@ -19,7 +21,7 @@ body{
 }
 
 .container{
-    width: 1000px;
+    width: 960px;
     margin-right: auto;
     margin-left: auto;
 
@@ -36,7 +38,6 @@ body{
 }
 
 .menu{
-    /*todo нариловать логотип*/
     /*todo сделать логотип в меню*/
     /*todo закрепить, при прокрутке вверх/вниз остается. на вершине - отступ*/
     /*todo выше менюшки маленький значек выбо языков*/
@@ -52,20 +53,20 @@ ul{
     margin: 0 0;
 }
 
-ul li {
+.menu ul li {
     display: inline-block;
     text-align: right;
     margin: 0% 6%;
     /*todo убрать перенос строки. проблема возможно из-за ширишы контейнера*/
 }
 
-ul li a{
+.menu ul li a{
     /*color: whitesmoke;*/
     color: #fff;
     text-decoration: none;
 }
 
-ul li a:hover{
+.menu ul li a:hover{
     /*todo !!!!!!!!!!!!!!!! при наведении сделать плавную анимацию как на apple */
     text-decoration: none;
     color: red;
@@ -77,7 +78,8 @@ img{
     /*height: 400px;*/
 }
 
-.text-block{
+.text-block-accent{
+    /*todo решить нужен-ли акцентный блок для текста*/
     /*todo сделать нормальную рамку*/
     /*todo сделать набегание*/
 
@@ -87,7 +89,17 @@ img{
     /*todo выбрать фон*/
     background-color: rgba(255,186,0,0.1);
     border: 1px solid rgba(255,186,0,0.15);
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px 0px #706c6e;
+    font-size: 1.2rem;
+
 }
+.text-block-accent:hover{
+    /*todo сделать анемированный переход*/
+    box-shadow: 2px 2px 10px 5px #706c6e;
+
+}
+
 
 h1{
     color: #ffc514;
@@ -96,7 +108,7 @@ h1{
 }
 
 h2{
-    color: #ffc514;
+    color: black;
     text-align: center;
     margin: 0 0;
 }
