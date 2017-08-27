@@ -1,0 +1,216 @@
+/*
+    ЦВЕТА:
+    основной текст
+    основной фон
+
+
+    акцентный
+
+    красивый феолетовый цвет darkorchid
+
+*/
+
+
+
+
+
+body{
+    margin: 0 0;
+    padding: 0 0;
+    /*font-family: Tahoma, Arial, serif;*/
+    font-family: 'Oswald', sans-serif;
+
+}
+
+
+.container{
+    width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+
+
+}
+
+.line{
+    margin: 0% auto;
+    padding: 0% 0%;
+    display: block;
+    box-sizing: border-box;
+
+
+}
+
+.logo{
+    font-family: 'Oswald', sans-serif;
+    color: #333;
+    font-size: xx-large;
+
+}
+
+
+
+.menu{
+    /*todo сделать логотип в меню*/
+    /*todo закрепить, при прокрутке вверх/вниз остается. на вершине - отступ*/
+    /*todo выше менюшки маленький значек выбо языков*/
+
+    background-color: #333;
+    margin-top: 2%;
+    margin-bottom: 4%;
+    font-size: 1.2rem;
+
+}
+
+ul{
+    margin: 0 0;
+}
+
+
+p{
+    margin-bottom: 1%;
+}
+
+.menu ul li {
+    display: inline-block;
+    text-align: right;
+    margin: 0% 8%;
+    /*todo убрать перенос строки. проблема возможно из-за ширишы контейнера*/
+}
+
+.menu ul li a{
+    /*color: whitesmoke;*/
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu ul li a:hover{
+    /*todo !!!!!!!!!!!!!!!! при наведении сделать плавную анимацию как на apple */
+    text-decoration: none;
+    color: red;
+    cursor: pointer;
+}
+
+img{
+    background-position: center ;
+    width: 100%;
+    /*height: 400px;*/
+}
+
+
+.text-block{
+    /*todo решить нужен-ли акцентный блок для текста*/
+    /*todo сделать нормальную рамку*/
+    /*todo сделать набегание*/
+
+    margin: 20px 0px;
+    padding: 0px 40px 20px 40px;
+
+
+    display: inline-block;
+    width: 100%;
+    /*todo выбрать фон*/
+    background-color: #FAFAFA;
+    border: 1px solid #FAFAFA;
+    border-radius: 5px;
+    /*box-shadow: 2px 2px 10px 0px #706c6e;*/
+    font-size: 1.5rem;
+}
+.text-block:hover{
+    /*todo сделать анемированный переход*/
+    box-shadow: 2px 2px 10px 2px #706c6e;
+
+}
+
+.text-block-transition{
+    transition: 500ms;
+}
+
+.text-block>ul{
+    list-style: disc;
+}
+
+.text-block a{
+    text-decoration: none;
+    color: black;
+}
+.contacts{
+    display: inline-block;
+    width: 33% !important;
+    margin: 4% 6% !important;
+
+}
+
+
+
+
+
+.accent{
+    /**todo воткнуь слегка пульсирующую анимашку*/
+    background-color: #ffc514;
+    padding: 15px 15px;
+
+    margin: 4% 10%;
+
+    border: 1px solid #ffc514;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+
+.text-head{
+    margin: 4% 20%;
+    padding-bottom: 20px;
+
+    color: black;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+.vertical{
+    display: inline-block;
+    height: 50px;
+}
+
+.vertical-2{
+    display: inline-block;
+    height: 150px;
+}
+
+
+footer{
+    display: block;
+    background-color: #282828;
+    color: #fff;
+}
+
+/*------------------------старый вариант оформления текстового поля------------------------------------*/
+
+/*.text-block{*/
+    /*!*todo решить нужен-ли акцентный блок для текста*!*/
+    /*!*todo сделать нормальную рамку*!*/
+    /*!*todo сделать набегание*!*/
+
+    /*margin: 20px 0px;*/
+    /*padding: 0px 40px 20px 40px;*/
+
+
+    /*display: inline-block;*/
+    /*width: 100%;*/
+    /*!*todo выбрать фон*!*/
+    /*background-color: rgba(255,186,0,0.1);*/
+    /*border: 1px solid rgba(255,186,0,0.15);*/
+    /*border-radius: 5px;*/
+    /*box-shadow: 2px 2px 10px 0px #706c6e;*/
+    /*font-size: 1.5rem;*/
+/*}*/
+/*.text-block:hover{*/
+    /*!*todo сделать анемированный переход*!*/
+    /*box-shadow: 2px 2px 10px 2px #706c6e;*/
+
+/*}*/
+
+/*.text-block-transition{*/
+    /*transition: 500ms;*/
+/*}*/
