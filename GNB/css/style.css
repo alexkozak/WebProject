@@ -1,0 +1,68 @@
+
+/*
+#D40911 - красный
+#797979 - серый
+
+ */
+
+
+body{
+    margin: 0 0;
+    padding: 0 0;
+    font-family: Tahoma, Arial, serif;
+
+}
+
+.container{
+    width: 960px;
+    margin: 0 auto;
+    border-right: 3px dotted red;
+    border-left: 3px dotted red;
+}
+
+.line{
+    margin: 0% auto;
+    padding: 0% 0%;
+    display: block;
+    box-sizing: border-box;
+}
+
+.logo{
+    display: inline-block;
+
+}
+.logo img{
+    vertical-align: top;
+    margin-left: -0.8%;
+}
+
+.logo-txt{
+    font-size: 4.5rem;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: -1.2%;
+    margin-left: -0.7%;
+}
+
+.logo-txt-2{
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    padding-top: 0.5%;
+    padding-left: 3%;
+}
+
+.logo-contacts{
+    display: inline-block;
+    text-align: right;
+    width: 27.75%;
+
+    /*border: 1px solid blue;*/
+}
+
+.logo-contacts a{
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.8rem;
+    margin-top: 5%;
+}
