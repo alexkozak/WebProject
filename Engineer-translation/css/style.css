@@ -56,9 +56,9 @@ body{
 
     background-color: #333;
     margin-top: 2%;
-    margin-bottom: 4%;
+    margin-bottom: 0%;
     font-size: 1.2rem;
-
+    padding-bottom: 0.4%;
 }
 
 ul{
