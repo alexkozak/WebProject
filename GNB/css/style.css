@@ -16,8 +16,8 @@ body{
 .container{
     width: 960px;
     margin: 0 auto;
-    border-right: 3px dotted red;
-    border-left: 3px dotted red;
+    /*border-right: 3px dotted red;*/
+    /*border-left: 3px dotted red;*/
 }
 
 .line{
@@ -50,6 +50,9 @@ body{
     width: 30%;
     padding-top: 0.5%;
     padding-left: 3%;
+    color: #797979;
+    font-weight: 700;
+
 }
 
 .logo-contacts{
@@ -65,4 +68,47 @@ body{
     display: inline-block;
     font-size: 0.8rem;
     margin-top: 5%;
+}
+
+.logo-contacts .tel{
+    margin-top: 5%;
+    color: #D40911;
+    font-size: 1.2rem;
+}
+
+
+.menu{
+    heith: 5%;
+    background-color: #D40911;
+    font-weight: 700;
+    margin-top: 2%;
+    padding: 0.3% 0%;
+}
+
+ul{
+    margin: 0 0;
+
+}
+
+.menu ul li{
+    display: inline;
+
+}
+
+
+.menu ul li a{
+    margin: 0 1.6%;
+    padding: 0 2%;
+    text-decoration: none;
+    color: whitesmoke;
+
+
+}
+
+.menu ul li a:hover{ /*todo СДЕЛАТЬ, ЧТОБЫ ВЫДЕЛЯЛАСЬ АКТИВНАЯ СТРАНИЦА*/
+    background: black;
+}
+
+.banner{
+    width:100%;
 }
