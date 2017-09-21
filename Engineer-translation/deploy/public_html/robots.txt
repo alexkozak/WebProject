@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: 
+Sitemap: http://engineer-translation.ru/sitemap.xml
