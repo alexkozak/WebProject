@@ -57,7 +57,6 @@ p{
     display: inline-block;
     text-align: right;
     margin: 0% 8%;
-    /*todo убрать перенос строки. проблема возможно из-за ширишы контейнера*/
 }
 
 .menu ul li a{
@@ -66,7 +65,6 @@ p{
 }
 
 .menu ul li a:hover{
-    /*todo !!!!!!!!!!!!!!!! при наведении сделать плавную анимацию как на apple */
     text-decoration: none;
     color: red;
     cursor: pointer;
@@ -92,7 +90,6 @@ img{
 }
 .text-block:hover{
     box-shadow: 0px 0px 10px 2px #706c6e;
-
 }
 
 .text-block-transition{
