@@ -1,7 +1,5 @@
 
-
-
-body{
+body {
     margin: 0 0;
     padding: 0 0;
     /*font-family: Tahoma, Arial, serif;*/
@@ -9,34 +7,24 @@ body{
 
 }
 
-
-.container{
-    width: 960px;
-    margin-right: auto;
-    margin-left: auto;
-
-
-}
-
-.line{
+.line {
     margin: 0% auto;
     padding: 0% 0%;
     display: block;
     box-sizing: border-box;
 
+}
+
+/* ПК версия */
+
+.container {
+    width: 960px;
+    margin-right: auto;
+    margin-left: auto;
 
 }
 
-.logo{
-    font-family: 'Oswald', sans-serif;
-    color: #333;
-    font-size: xx-large;
-
-}
-
-
-
-.menu{
+.menu {
     background-color: #333;
     margin-top: 2%;
     margin-bottom: 0%;
@@ -44,12 +32,18 @@ body{
     padding-bottom: 0.4%;
 }
 
-ul{
+.logo {
+    font-family: 'Oswald', sans-serif;
+    color: #333;
+    font-size: xx-large;
+
+}
+
+ul {
     margin: 0 0;
 }
 
-
-p{
+p {
     margin-bottom: 1%;
 }
 
@@ -59,27 +53,25 @@ p{
     margin: 0% 8%;
 }
 
-.menu ul li a{
+.menu ul li a {
     color: #fff;
     text-decoration: none;
 }
 
-.menu ul li a:hover{
+.menu ul li a:hover {
     text-decoration: none;
     color: red;
     cursor: pointer;
 }
 
-img{
-    background-position: center ;
+img {
+    background-position: center;
     width: 100%;
 }
 
-
-.text-block{
+.text-block {
     margin: 20px 0px;
     padding: 0px 40px 20px 40px;
-
 
     display: inline-block;
     width: 100%;
@@ -88,34 +80,32 @@ img{
     border-radius: 5px;
     font-size: 1.5rem;
 }
-.text-block:hover{
+
+.text-block:hover {
     box-shadow: 0px 0px 10px 2px #706c6e;
 }
 
-.text-block-transition{
+.text-block-transition {
     transition: 500ms;
 }
 
-.text-block>ul{
+.text-block > ul {
     list-style: disc;
 }
 
-.text-block a{
+.text-block a {
     text-decoration: none;
     color: black;
 }
-.contacts{
+
+.contacts {
     display: inline-block;
     width: 33% !important;
     margin: 4% 6% !important;
 
 }
 
-
-
-
-
-.accent{
+.accent {
     background-color: #ffc514;
     padding: 15px 15px;
 
@@ -126,9 +116,7 @@ img{
     text-align: center;
 }
 
-
-
-.text-head{
+.text-head {
     margin: 4% 20%;
     padding-bottom: 20px;
 
@@ -138,13 +126,34 @@ img{
     font-weight: 100;
 }
 
-.vertical{
+.vertical {
     display: inline-block;
     height: 50px;
 }
 
-.vertical-2{
+.vertical-2 {
     display: inline-block;
     height: 150px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

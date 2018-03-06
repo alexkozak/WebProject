@@ -520,3 +520,136 @@ Ctrl+U - исходный код страницы
 
 
 
+
+===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===
+===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===
+===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===JS===
+<script async src="script.js"></script> - асинхронная загрузка скрипта (страница не ждет его загрузки)
+<script defer src="script.js"></script> - устаревшая тема
+
+alert('Привет')
+alert('Мир') - так тоже работает, но не всегда, так лучше не делать
+
+"use strict" - работа по современному стандарту. работает во всем скрипте до конца, невыключить
+так же можно указывать вначале функций
+
+var user = { name: "Вася" ........}; - объект
+
+если один элемент - строка, при "+" сторой приводится к строке
+alert( '1' + 2 ); // "12"
+
+унарный +
+var apples = "2";
+var oranges = "3";
+alert( +apples + +oranges ); // 5, число, оба операнда предварительно преобразованы в числа
+
+var a = 10;
+var b = 2;
+lert(10 - (a=b+b));//6
+
+var a = 10;
+a++;
+alert(a++);//11 ))) чтобы не лагало надо ++а
+
+var i = 1;
+var a = ++i; // (*)
+alert(a); // 2
+
+var i = 1;
+var a = i++; // (*)
+alert(a); // 1
+
+Значения null и undefined равны == друг другу и не равны чему бы то ни было ещё. Это жёсткое правило буквально прописано в спецификации языка.
+При преобразовании в число null становится 0, а undefined становится NaN.
+
+alert( null > 0 ); // false
+alert( null == 0 ); // false
+alert(null >= 0); // true
+alert( undefined > 0 ); // false (1)
+alert( undefined < 0 ); // false (2)
+alert( undefined == 0 ); // false (3)
+
+alert выводит сообщение.
+prompt выводит сообщение и ждёт, пока пользователь введёт текст, а затем возвращает введённое значение или null, если ввод отменён (CANCEL/Esc).
+confirm выводит сообщение и ждёт, пока пользователь нажмёт «OK» или «CANCEL» и возвращает true/false.
+
+function sayHi() {
+  alert( "Привет" );
+}
+
+var f = function(параметры) {
+  // тело функции
+};
+
+var number = 123456789;
+
+alert( number.toLocaleString() ); // 123 456 789
+
+alert(console.log(123)); // 123 в консоль
+
+ ✂ &#x2702; // так в HTML можно подставить символ
+
+var menuSetup = {
+  width: 300,
+  height: 200,
+  title: "Menu"
+};
+
+// то же самое, что:
+
+var menuSetup = {};
+menuSetup.width = 300;
+menuSetup.height = 200;
+menuSetup.title = 'Menu';
+
+
+
+
+var menu = {
+  width: 300,
+  height: 200,
+  title: "Menu"
+};
+
+for (var key in menu) {
+  // этот код будет вызван для каждого свойства объекта
+  // ..и выведет имя свойства и его значение
+
+  alert( "Ключ: " + key + " значение: " + menu[key] );
+}
+
+height = height || 100; // если нет height, то height = 100
+title = title || "Предупреждение";
+
+
+
+
+function makeCounter() {
+  var currentCount = 1;
+
+  return function() { // (**)
+    return currentCount++;
+  };
+}
+
+var counter = makeCounter(); // (*)
+
+// каждый вызов увеличивает счётчик и возвращает результат
+alert( counter() ); // 1
+alert( counter() ); // 2
+alert( counter() ); // 3
+
+// создать другой счётчик, он будет независим от первого
+var counter2 = makeCounter();
+alert( counter2() ); // 1
+Они независимы, потому что при каждом запуске makeCounter создаётся свой объект переменных LexicalEnvironment, со своим свойством currentCount, на который новый счётчик получит ссылку [[Scope]].
+
+
+
+var createHelloFunction = function(name) {
+   return function() {
+      alert('Hello, ' + name);
+   }
+}
+var sayHelloHabrahabr = createHelloFunction('Habrahabr');
+sayHelloHabrahabr(); //alerts «Hello, Habrahabr»
