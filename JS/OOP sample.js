@@ -119,3 +119,61 @@ admin.g = func;
 user.f(); // Вася
 admin.g(); // Админ
 admin['g'](); // Админ (не важно, доступ к объекту через точку или квадратные скобки)
+
+
+/* создание объектов через new */
+
+function User(name) {
+    this.name = name;
+
+    this.sayHi = function() {
+        alert( "Моё имя: " + this.name );
+    };
+}
+
+var ivan = new User("Иван");
+
+ivan.sayHi(); // Моё имя: Иван
+
+/*
+ ivan = {
+ name: "Иван",
+ sayHi: функция
+ }
+ */
+
+/* пример get */
+
+function User(name, birthday) {
+    this.name = name;
+    this.birthday = birthday;
+
+    // age будет высчитывать возраст по birthday
+    Object.defineProperty(this, "age", {
+        get: function() {
+            var todayYear = new Date().getFullYear();
+            return todayYear - this.birthday.getFullYear();
+        }
+    });
+}
+
+var pete = new User("Петя", new Date(1987, 6, 1));
+
+alert( pete.birthday ); // и дата рождения доступна
+alert( pete.age );      // и возраст //тут не нужно писать pete.age(), но можно сделать обработку значения, потом изменить...
+
+
+
+/* -----ПИЗДЕЦ----- */
+var user = {
+    name: "Вася",
+    hi: function() { alert(this.name); },
+    bye: function() { alert("Пока"); }
+};
+
+user.hi(); // Вася (простой вызов работает)
+
+// а теперь вызовем user.hi или user.bye в зависимости от имени
+(user.name == "Вася" ? user.hi : user.bye)(); // undefined
+//это фишка this
+
