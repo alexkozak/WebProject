@@ -653,3 +653,20 @@ var createHelloFunction = function(name) {
 }
 var sayHelloHabrahabr = createHelloFunction('Habrahabr');
 sayHelloHabrahabr(); //alerts «Hello, Habrahabr»
+
+
+
+
+
+
+
+
+
+var f = function factorial(n) {
+  return n ? n*factorial(n-1) : 1;
+};
+
+var g = f;  // скопировали ссылку на функцию-факториал в g
+f = null;
+
+alert( g(5) ); // 120, работает!
