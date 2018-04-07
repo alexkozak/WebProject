@@ -1,0 +1,186 @@
+/* javascript good parts */
+
+/*--------------------------*/
+
+var arr = {
+    fist: "vasa",
+    second: "pupkin"
+};
+alert(arr.fist);
+alert(arr['second']);
+alert(arr[0]);// undefined не знаю почему
+
+/*--------------------------*/
+
+flight.hasOwnProperty('number') // true. в объекте flight есть свойство "number"
+
+/*--------------------------*/
+
+var myObject = {
+    value: 0,
+    increment: function (inc) {
+        this.value += typeof inc === 'number' ? inc : 1; //вначале идет проверка на тип
+    }
+};
+
+/*--------------------------*/
+
+var sum = add(3, 4); // sum is 7// When a function is invoked with this pattern, this is bound to the global object. !!!
+This was a mistake in the design of the language.
+A consequence of this error is that a method cannot
+employ an inner function to help it do its work because the inner function does not
+share the method’s access to the object as its this is bound to the wrong value.
+
+БОЛЕЕ ПОДРОБНО ПРО ОШИБКУ JS ЧИТАТЬ В The Function Invocation Pattern
+
+
+/*--------------------------*/
+
+//PROTOTYPE
+
+function array_max( ){
+    var i, max = this[0];
+    for (i = 1; i < this.length; i++) {
+        if (max < this[i])
+        max = this[i];
+    }
+    return max;
+}
+Array.prototype.max = array_max;
+
+// а теперь создадим новый массив
+// и запустим новый метод
+var x = [ 1, 2, 100, 3, 4, 5, 6];
+var y = x.max( );
+alert(y);
+
+
+/*--------------------------*/
+
+//первый вариант - стандартный объект
+var myObject = function ( ) {
+    var value = 0;
+    return {
+        increment: function (inc) {
+            value += typeof inc === 'number' ? inc : 1;
+        },
+        getValue: function ( ) {
+            return value;
+        }
+    };
+};
+
+var ob1 = myObject();
+ob1.increment(11);
+alert(ob1.getValue()); //11
+
+//второй вариант - без создания нового объекта
+var myObject2 = function ( ) {
+    var value = 0;
+    return {
+        increment: function (inc) {
+            value += typeof inc === 'number' ? inc : 1;
+        },
+        getValue: function ( ) {
+            return value;
+        }
+    };
+} (); // !!!!!! выполнили функцию и результат присвоили функции myObject2!!!!!!!!!!
+
+myObject2.increment(100);
+alert (myObject2.getValue());//100
+
+
+/*--------------------------*/
+//Callbacks
+
+
+//медленно
+request = prepare_the_request( );
+response = send_request_synchronously(request);
+display(response);
+
+//быстро
+request = prepare_the_request( );
+send_request_asynchronously(request, function (response) {
+display(response);
+});
+
+
+
+/*--------------------------*/
+
+
+//не понял что такое module pattern JS разобратья!!!
+
+
+
+/*--------------------------*/
+
+
+//   !!!REGULAR EXPRESSION!!!
+
+
+var parse_url = /^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/;
+var url = "http://www.ora.com:80/goodparts?q#fragment";
+var result = parse_url.exec(url);
+var names = ['url', 'scheme', 'slash', 'host', 'port', 'path', 'query', 'hash'];
+var blanks = ' ';
+var i;
+for (i = 0; i < names.length; i += 1) {
+    alert (names[i] + ': '  + result[i]);
+}
+
+//result
+// url: http://www.ora.com:80/goodparts?q#fragment
+// scheme: http
+// slash: //
+// host: www.ora.com
+// port: 80
+// path: goodparts
+// query: q
+// hash: fragment
+
+
+/*--------------------------*/
+
+//определить, что переменная - массив
+
+if (my_value && typeof my_value === 'object' &&
+typeof my_value.length === 'number' &&
+!(my_value.propertyIsEnumerable('length')) {
+// my_value is truly an array!
+}
+
+/*--------------------------*/
+
+FOR IN ПОИСК ПО СВОЙСТВАМ В ОБЪЕКТЕ НЕ ЗАХОДЯ К РОДИТЕЛЯМ
+
+var buz = {
+  fog: 'stack'
+};
+
+for (var name in buz) {
+  if (buz.hasOwnProperty(name)) {
+    alert('это точно туман (' + name + '). Значение: ' + buz[name]);
+  }
+  else {
+    alert(name); // toString или что-то ещё
+  }
+}
+
+/*--------------------------*/
+/*--------------------------*/
+/*--------------------------*/
+/*--------------------------*/
+
+Constructors and new
+p 123!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+/*--------------------------*/
+/*--------------------------*/
+/*--------------------------*/
+/*--------------------------*/
+
+var numbers = prompt("enter numbers", "1, 5, 3, 8, 2, 6, 7");
+numbers = JSON.parse("[" + numbers + "]");

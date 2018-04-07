@@ -177,3 +177,116 @@ user.hi(); // Вася (простой вызов работает)
 (user.name == "Вася" ? user.hi : user.bye)(); // undefined
 //это фишка this
 
+
+/* пример call */
+var user = {
+    firstName: "Василий",
+    surname: "Петров",
+    patronym: "Иванович"
+};
+
+function showFullName(firstPart, lastPart) {
+    alert( this[firstPart] + " " + this[lastPart] );
+}
+
+// f.call(контекст, аргумент1, аргумент2, ...)
+showFullName.call(user, 'firstName', 'surname'); // "Василий Петров"
+showFullName.call(user, 'firstName', 'patronym'); // "Василий Иванович"
+
+
+
+/* привязка контекста два примера. один работает, другой - нет */
+
+
+/*не работает*/
+var user = {
+    firstName: "Вася",
+    sayHi: function() {
+        alert( this.firstName );
+    }
+};
+
+setTimeout(user.sayHi, 1000); // undefined (не Вася!)
+// почитать про это https://learn.javascript.ru/bind
+
+
+/*решение 1. функция-обертка.Теперь код работает, так как user достаётся из замыкания.*/
+var user = {
+    firstName: "Вася",
+    sayHi: function() {
+        alert( this.firstName );
+    }
+};
+
+setTimeout(function() {
+    user.sayHi(); // Вася
+}, 1000);
+
+
+/*решение 2. самим написать bind*/
+function bind(func, context) {
+    return function() {
+        return func.apply(context, arguments);
+    };
+}
+
+var user = {
+    firstName: "Вася",
+    sayHi: function() {
+        alert( this.firstName );
+    }
+};
+
+setTimeout(bind(user.sayHi, user), 1000);
+
+
+/*решение 3. встроенный метод bind*/
+function f(a, b) {
+    alert( this );
+    alert( a + b );
+}
+
+// вместо
+// var g = bind(f, "Context");
+var g = f.bind("Context");
+g(1, 2); // Context, затем 3
+//те как я понял, если работаешь с this, лучше делать ччерез bind
+
+
+
+
+
+
+
+/*пример декоратора (функция-обертка)*/
+var timers = {};
+
+// прибавит время выполнения f к таймеру timers[timer]
+function timingDecorator(f, timer) {
+    return function() {
+        var start = performance.now();
+
+        var result = f.apply(this, arguments); // (*)
+
+        if (!timers[timer]) timers[timer] = 0;
+        timers[timer] += performance.now() - start;
+
+        return result;
+    }
+}
+
+// функция может быть произвольной, например такой:
+var fibonacci = function f(n) {
+    return (n > 2) ? f(n - 1) + f(n - 2) : 1;
+}
+
+// использование: завернём fibonacci в декоратор
+fibonacci = timingDecorator(fibonacci, "fibo");
+
+// неоднократные вызовы...
+alert( fibonacci(10) ); // 55
+alert( fibonacci(20) ); // 6765
+// ...
+
+// в любой момент можно получить общее количество времени на вызовы
+alert( timers.fibo + 'мс' );
