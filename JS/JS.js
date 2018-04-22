@@ -1,58 +1,35 @@
 "use strict";
 
-function bank() {
 
-    function Account(name, balance) {
-        this.name = name;
-        this.balance = balance;
+function Animal(name, mass) {
+    Animal.count++;
+    Animal.population = [];
+    Animal.sortedPopulation = [];
 
-        this.getBalance = function () {
-            alert("name: " + this.name + ", balance: " + this.balance);
-        };
+    Animal.f = function () {
+        alert('hi nigga');
+    };
 
-        this.putMoney = function (amount) {
-            this.balance += amount;
-            alert("name: " + this.name + " put money: " + amount + ", balance: " + this.balance);
-        };
-
-        this.getMoney = function (amount) {
-            this.balance -= amount;
-            alert("name: " + this.name + " get money: " + amount + ", balance: " + this.balance);
-        }
+    var mass = mass;
 
 
+
+    function message() {
+        alert("name: " + name + ", population: " + Animal.count)
     }
+    message();
 
-
-    var volandemort = new Account("Volandemort", 500);
-    volandemort.getBalance();
-    volandemort.putMoney(100);
-    volandemort.getMoney(50);
-    volandemort.getBalance();
-    //550
-
-
-    var vasa = new Account("Vasa", 100);
-    vasa.getBalance();
-    vasa.putMoney(200);
-    vasa.getBalance();
-    //300
-
+    function addToPopulation() {
+        Animal.population.pop(new Animal());
+    }
 
 
 }
 
-bank();
+Animal.count=0;
 
+var animal = new Animal("ёжик срейдний");
+var animal2 = new Animal("ёжик легкий");
+var animal3 = new Animal("ёжик тяжелый");
 
-
-
-
-
-
-
-
-
-
-
-
+Animal.f();

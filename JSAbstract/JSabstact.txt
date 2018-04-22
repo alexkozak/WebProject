@@ -184,3 +184,210 @@ p 123!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 var numbers = prompt("enter numbers", "1, 5, 3, 8, 2, 6, 7");
 numbers = JSON.parse("[" + numbers + "]");
+
+/*--------------------------*/
+
+замена текста в HTML
+
+var el = document.getElementById('greeting');
+el.textContent = "Hi nigga";
+
+/*--------------------------*/
+//статические методы
+
+function Article() {
+  Article.count++;
+
+  //...
+}
+Article.count = 0;
+
+Article.showCount = function() {
+  alert( this.count ); // (1)
+}
+
+// использование
+new Article();
+new Article();
+Article.showCount(); // (2)
+
+/*--------------------------*/
+
+//typeof
+
+
+alert( typeof 1 );         // 'number'
+alert( typeof true );      // 'boolean'
+alert( typeof "Текст" );   // 'string'
+alert( typeof undefined ); // 'undefined'
+alert( typeof null );      // 'object' (ошибка в языке)
+alert( typeof alert );     // 'function'
+alert( typeof {} ); // 'object'
+alert( typeof [] ); // 'object'
+alert( typeof new Date ); // 'object'
+
+/*--------------------------*/
+/*--------------------------*/
+/*--------------------------*/
+
+//красивое определение типов
+
+alert( {}.toString.call(123) ); // [object Number]
+alert( {}.toString.call("строка") ); // [object String]
+
+//или сделать метод
+unction getClass(obj) {
+  return {}.toString.call(obj).slice(8, -1);
+}
+
+alert( getClass(new Date) ); // Date
+alert( getClass([1, 2, 3]) ); // Array
+
+
+//проверка на тип массива
+alert( Array.isArray([1,2,3]) ); // true
+alert( Array.isArray("not array")); // false
+
+
+
+
+/*--------------------------*/
+/*--------------------------*/
+/*--------------------------*/
+
+
+//instanceof
+
+function User() {}
+
+var user = new User();
+
+alert( user instanceof User ); // true
+
+/*--------------------------*/
+
+// утиная типизация
+//https://learn.javascript.ru/class-instanceof#%D1%83%D1%82%D0%B8%D0%BD%D0%B0%D1%8F-%D1%82%D0%B8%D0%BF%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F
+//магия
+
+/*--------------------------*/
+
+//parse to JSON
+
+// дата в строке - в формате UTC
+var str = '{"title":"Конференция","date":"2014-11-30T12:00:00.000Z"}';
+
+var event = JSON.parse(str, function(key, value) {
+  if (key == 'date') return new Date(value);
+  return value;
+});
+
+alert( event.date.getDate() ); // теперь сработает!
+
+//МАГИЯ
+var schedule = '{ \
+  "events": [ \
+    {"title":"Конференция","date":"2014-11-30T12:00:00.000Z"}, \
+    {"title":"День рождения","date":"2015-04-18T12:00:00.000Z"} \
+  ]\
+}';
+
+schedule = JSON.parse(schedule, function(key, value) {
+  if (key == 'date') return new Date(value);
+  return value;
+});
+
+alert( schedule.events[1].date.getDate() ); // сработает!
+
+//JSON to String
+var event = {
+  title: "Конференция",
+  date: "сегодня"
+};
+
+var str = JSON.stringify(event);
+alert( str ); // {"title":"Конференция","date":"сегодня"}
+
+// Обратное преобразование.
+event = JSON.parse(str);
+
+//исключение свойств
+Во втором параметре JSON.stringify(value, replacer) можно указать массив свойств, которые подлежат сериализации.
+
+Например:
+
+ var user = {
+  name: "Вася",
+  age: 25,
+  window: window
+};
+
+alert( JSON.stringify(user, ["name", "age"]) );
+// {"name":"Вася","age":25}
+
+//боее сложный вариант
+var user = {
+  name: "Вася",
+  age: 25,
+  window: window
+};
+
+var str = JSON.stringify(user, function(key, value) {
+  if (key == 'window') return undefined;
+  return value;
+});
+
+alert( str ); // {"name":"Вася","age":25}
+
+
+//красивое форматирование
+/*
+Если он является числом – то уровни вложенности в JSON оформляются указанным количеством пробелов, если строкой – вставляется эта строка.
+*/
+
+var user = {
+  name: "Вася",
+  age: 25,
+  roles: {
+    isAdmin: false,
+    isEditor: true
+  }
+};
+
+var str = JSON.stringify(user, "", 4);
+
+alert( str );
+/* Результат -- красиво сериализованный объект:
+{
+    "name": "Вася",
+    "age": 25,
+    "roles": {
+        "isAdmin": false,
+        "isEditor": true
+    }
+}
+*/
+
+/*--------------------------*/
+
+//timeout
+
+function func() {
+  alert( 'Привет' );
+}
+
+setTimeout(func, 1000);
+
+function func(phrase, who) {
+  alert( phrase + ', ' + who );
+}
+
+setTimeout(func, 1000, "Привет", "Вася"); // Привет, Вася
+
+
+setTimeout("alert('Привет')", 1000);
+/*
+Однако, использование строк не рекомендуется, так как они могут вызвать проблемы при минимизации кода, и, вообще, сама возможность использовать строку сохраняется лишь для совместимости.
+Вместо них используйте анонимные функции, вот так:
+*/
+setTimeout(function() { alert('Привет') }, 1000);
