@@ -1,35 +1,23 @@
 "use strict";
 
 
-function Animal(name, mass) {
-    Animal.count++;
-    Animal.population = [];
-    Animal.sortedPopulation = [];
+function Animal(name){
+    this._name = name;
 
-    Animal.f = function () {
-        alert('hi nigga');
-    };
-
-    var mass = mass;
-
-
-
-    function message() {
-        alert("name: " + name + ", population: " + Animal.count)
+    Animal.prototype.getName = function () {
+        alert("Animal name: " + this._name)
     }
-    message();
-
-    function addToPopulation() {
-        Animal.population.pop(new Animal());
-    }
-
-
 }
 
-Animal.count=0;
+function Rabbit(name) {
+    Animal.apply(this,arguments);
+    Rabbit.prototype = Object.create(Animal.prototype);
+    Rabbit.prototype.move = function () {
+        alert("Rabbit " + this.getName() + "moves");
+    }
+}
 
-var animal = new Animal("ёжик срейдний");
-var animal2 = new Animal("ёжик легкий");
-var animal3 = new Animal("ёжик тяжелый");
+var rab = new Rabbit("Vasa");
+rab.move();
 
-Animal.f();
+
