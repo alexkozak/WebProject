@@ -8,13 +8,13 @@
     <script async src="JS.js"></script>
 
     <style>
+
         .container {
             width: 500px;
             margin-right: auto;
             margin-left: auto;
             border: dotted;
             text-align: center;
-
         }
 
 
@@ -23,25 +23,25 @@
 </head>
 
 <body>
+    <div>Начало</div>
 
-   <div>
-       txt
-   </div>
+    <ul>
+        <li>Информация</li>
+    </ul>
 
-
-
-
-
-
-
+    <div>Конец1</div>
+    <div>Конец2</div>
+    <div>Конец3</div>
 
 
 <script>
 
-    alert("к-во childNodes: " + document.body.childNodes.length);
 
-    for (var i = 0; i < document.body.childNodes.length; i++) {
-        alert( document.body.childNodes[i] ); // Text, DIV, Text, UL, ..., SCRIPT
+
+
+    alert("длинна: " + document.body.children.length);
+    for (var i = 0; i<document.body.children.length; i++){
+        alert("<<" + i + ">>" + document.body.children[i].innerHTML);
     }
 
 
