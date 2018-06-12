@@ -533,3 +533,47 @@ Rabbit.prototype.constructor = Rabbit;
 Rabbit.prototype.jump = function() {
   this.speed++;
   alert( this.name + ' прыгает, скорость ' + this.speed );
+
+
+/*=================================================*/
+/*=================================================*/
+/*=================================================*/
+/* DOM DOM DOM DOM DOM DOM DOM DOM DOM DOM DOM DOM */
+
+/*
+Псевдо-массив childNodes хранит все дочерние элементы, включая текстовые.
+*/
+document.body.childNodes
+
+
+
+//поиск документов getElementById
+var elem = document.getElementById('content');
+elem.style.background = 'red';
+content.style.background = ""; // один и тот же элемент
+
+// получить все div-элементы
+var elements = document.getElementsByTagName('div');
+
+var tableElem = document.getElementById('age-table');
+var elements = tableElem.getElementsByTagName('input');
+
+// получить все элементы документа
+document.getElementsByTagName('*');
+
+// получить всех потомков элемента elem:
+elem.getElementsByTagName('*');
+
+// не работает
+document.getElementsByTagName('input').value = 5;
+// работает
+document.getElementsByTagName('input')[0].value = 5;
+
+//поиск по классам, кроме IE8
+var articles = document.getElementsByClassName('article');
+
+//элементы по селектору css
+var elements = document.querySelectorAll('ul > li:last-child');
+
+//вернёт список, в порядке вложенности, из текущих элементов под курсором мыши.
+document.querySelectorAll(':hover')
