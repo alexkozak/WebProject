@@ -577,3 +577,146 @@ var elements = document.querySelectorAll('ul > li:last-child');
 
 //вернёт список, в порядке вложенности, из текущих элементов под курсором мыши.
 document.querySelectorAll(':hover')
+
+
+//перебор DOM элементов
+for (var i = 0; i<document.body.children.length; i++){
+        alert("<<" + i + ">>" + document.body.children[i].innerHTML);//отображает внетреннее содержание
+    }
+
+//поиск элемента по ID
+var element = document.getElementById("container2");
+element.style.backgroundColor = "red";
+
+
+//поиск элементов[] по названию тега
+var elements = document.getElementsByTagName('div');
+
+    for (var i = 0; i<elements.length; i++){
+        alert(elements[i].innerHTML);
+    }
+
+//получить всех потомков элемента elem
+elem.getElementsByTagName('*');
+// не работает
+document.getElementsByTagName('input').value = 5;
+// работает
+document.getElementsByTagName('input')[0].value = 5;
+
+
+//
+var elems = document.getElementsByName('age');//см тут <input type="radio" name="age" value="young" checked> младше 18
+
+//поиск по имени класса
+var els = document.getElementsByClassName("container");
+
+    for (var i = 0; i<els.length; i++){
+        alert(els[i].innerHTML);
+    }
+
+
+
+
+//////////////////////////
+//////////////////////////
+//////////////////////////
+//запрос селектора
+//////////////////////////
+//////////////////////////
+//////////////////////////
+var elements = document.querySelectorAll('ul > li:last-child');
+
+  for (var i = 0; i < elements.length; i++) {
+    alert( elements[i].innerHTML ); // "тест", "пройден"
+  }
+ //Псевдо-классы в CSS-селекторе, в частности :hover и :active, также поддерживаются. Например, document.querySelectorAll(':hover') вернёт список, в порядке вложенности, из текущих элементов под курсором мыши.
+//////////////////////////
+//////////////////////////
+//////////////////////////
+
+
+
+//matches
+<a href="http://example.com/file.zip">...</a>
+<a href="http://ya.ru">...</a>
+
+<script>
+  var elems = document.body.children;
+
+  for (var i = 0; i < elems.length; i++) {
+    if (elems[i].matches('a[href$="zip"]')) {
+      alert( "Ссылка на архив: " + elems[i].href );
+    }
+  }
+</script>
+
+
+
+//closest
+Метод elem.closest(css) ищет ближайший элемент выше по иерархии DOM, подходящий под CSS-селектор css. Сам элемент тоже включается в поиск.
+Иначе говоря, метод closest бежит от текущего элемента вверх по цепочке родителей и проверяет, подходит ли элемент под указанный CSS-селектор. Если подходит – останавливается и возвращает его.
+
+
+//свойства узла
+
+//innerHTNL
+document.body.children[0].innerHTML = "123";
+
+
+
+//outerHTML
+
+<div>Привет <b>Мир</b></div>
+
+<script>
+  var div = document.body.children[0];
+
+  alert( div.outerHTML ); // <div>Привет <b>Мир</b></div>
+</script>
+
+
+
+<div>Привет, Мир!</div>
+
+<script>
+  var div = document.body.children[0];
+
+  // заменяем div.outerHTML на <p>...</p>
+  div.outerHTML = '<p>Новый элемент!</p>';
+
+  // ... но содержимое div.outerHTML осталось тем же, несмотря на "перезапись"
+  alert( div.outerHTML ); // <div>Привет, Мир!</div>
+</script>
+
+
+
+    //два способа перезаписи outerHTML
+    var el = document.body.children[0];
+    alert(el.outerHTML);
+    document.body.children[0].outerHTML = '<p>777</p>';
+    el.outerHTML = '<p>777</p>';
+
+
+
+
+
+
+
+//textContent
+    <div>
+        <h1>Срочно в номер!</h1>
+        <p>Марсиане атакуют людей!</p>
+    </div>
+
+    <script>
+        var news = document.body.children[0];
+
+        // \n  Срочно в номер!\n  Марсиане атакуют людей!\n
+        alert(news.textContent);
+        alert(news.innerHTML);
+
+
+
+//hidden
+var lastDiv = document.body.children[2];
+  lastDiv.hidden = true;
